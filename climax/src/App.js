@@ -1,5 +1,6 @@
 // src/App.js — ClimaX (Native-like, Pure CSS, polished)
 import React from "react";
+import { Link } from "react-router-dom";
 import "./App.css";
 
 const Nav = () => {
@@ -7,7 +8,7 @@ const Nav = () => {
     { label: "Credit Pools", href: "#credit" },
     { label: "Integration", href: "#integration" },
     { label: "Swap", href: "#swap" },
-    { label: "Docs", href: "#docs" },
+    { label: "Docs", href: "/docs" }, // ← 改成真正路由
     { label: "Analytics", href: "#analytics" },
     { label: "Legacy V1", href: "#legacy" },
   ];
@@ -20,16 +21,21 @@ const Nav = () => {
         </a>
 
         <nav className="nav__links">
-          {items.map((it) => (
-            <a key={it.label} className="nav__link" href={it.href}>
-              {it.label}
-            </a>
-          ))}
+          {items.map((it) =>
+            it.label === "Docs" ? (
+              <Link key={it.label} className="nav__link" to={it.href}>
+                {it.label}
+              </Link>
+            ) : (
+              <a key={it.label} className="nav__link" href={it.href}>
+                {it.label}
+              </a>
+            )
+          )}
         </nav>
 
-        <a className="btn btn--primary nav__cta" href="#demo">
-          Request a Demo
-          <span className="btn__arrow">→</span>
+        <a className="btn btn--primary nav__cta" href="mailto:edirentzhang@gmail.com">
+          Request a Demo <span className="btn__arrow">→</span>
         </a>
 
         <button
@@ -49,11 +55,9 @@ const Nav = () => {
 const Hero = () => (
   <section className="section hero">
     <div className="container hero__wrap">
-      <h1 className="hero__title">
-        The Future of Carbon Credit RWA
-      </h1>
+      <h1 className="hero__title">The Future of Carbon Credit RWA</h1>
       <p className="hero__subtitle">
-        ClimaX builds cross-border liquidity for carbon markets. 
+        ClimaX builds cross-border liquidity for carbon markets.
         From CCER acquisition in China to SPV issuance in Hong Kong, and global ESG capital inflows.
       </p>
 
@@ -64,6 +68,9 @@ const Hero = () => (
         <a className="btn btn--ghost" href="#integration">
           Get Integrated <span className="btn__arrow">→</span>
         </a>
+        <Link className="btn btn--ghost" to="/docs">
+          Docs <span className="btn__arrow">→</span>
+        </Link>
       </div>
     </div>
   </section>
@@ -78,23 +85,23 @@ const Feature = ({ title, desc }) => (
 
 const Features = () => {
   const items = [
-  {
-    title: "Stage 1: CCER Acquisition",
-    desc: "收购国内新能源/煤炭企业 CCER，价格低廉但流动性不足。",
-  },
-  {
-    title: "Stage 2: Rights Transfer → SPV",
-    desc: "在香港设立 SPV，签署收益权转让协议，实现境内资产 → 境外工具合规映射。",
-  },
-  {
-    title: "Stage 3: SPV Issues RWA",
-    desc: "SPV 以未来收益权为底层资产，发行碳信用 RWA Token 或绿色债券，锚定国际标准。",
-  },
-  {
-    title: "Stage 4: Global Capital Access",
-    desc: "对接跨国企业与国际 ESG 基金，实现境内低买、境外高卖的套利与合规需求。",
-  },
-];
+    {
+      title: "Stage 1: CCER Acquisition",
+      desc: "收购国内新能源/煤炭企业 CCER，价格低廉但流动性不足。",
+    },
+    {
+      title: "Stage 2: Rights Transfer → SPV",
+      desc: "在香港设立 SPV，签署收益权转让协议，实现境内资产 → 境外工具合规映射。",
+    },
+    {
+      title: "Stage 3: SPV Issues RWA",
+      desc: "SPV 以未来收益权为底层资产，发行碳信用 RWA Token 或绿色债券，锚定国际标准。",
+    },
+    {
+      title: "Stage 4: Global Capital Access",
+      desc: "对接跨国企业与国际 ESG 基金，实现境内低买、境外高卖的套利与合规需求。",
+    },
+  ];
 
   return (
     <section id="features" className="section section--muted">
