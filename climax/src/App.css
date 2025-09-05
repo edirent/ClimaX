@@ -185,3 +185,26 @@ a{ color: inherit; text-decoration: none; }
 }
 .footer__links{ display: inline-flex; gap: 16px; }
 .footer__links a:hover{ color: var(--fg); }
+/* ===== Docs ===== */
+.doc__title{ font-weight: 850; font-size: clamp(32px,5vw,48px); letter-spacing: -0.02em; margin: 0 0 10px; }
+.doc__lead{ color: var(--muted); max-width: 900px; margin: 10px 0 0; font-size: 18px; }
+.doc__h2{ font-size: 24px; margin: 0 0 14px; font-weight: 800; letter-spacing: -0.01em; }
+
+.doc__grid4{
+  display:grid; gap:18px; grid-template-columns:1fr;
+}
+@media (min-width: 900px){
+  .doc__grid4{ grid-template-columns: repeat(4, 1fr); }
+}
+.doc__card{
+  background: var(--card); border:1px solid var(--line); border-radius:16px; padding:18px;
+  box-shadow: var(--shadow);
+}
+.doc__card h3{ margin:0 0 8px; font-size:16px; font-weight:750; }
+.doc__card ul{ margin:0; padding-left:18px; color: var(--muted); }
+
+/* Flow chart */
+.flow{ width:100%; overflow:auto; border:1px solid var(--line); border-radius:18px; background: var(--bg); box-shadow: var(--shadow); }
+.flow__svg{ display:block; width:100%; height:auto; }
+.flow__box{ color:#0b0c0f; font-size:14px; line-height:1.5; }
+.flow__box--light{ color:#fff; }

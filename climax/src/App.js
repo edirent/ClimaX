@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
-import logo from "./assets/logo.png"; // ← 加入你们的LOGO图片路径
+import logo from "./assets/logo.png"; // ← LOGO 图片
 
 const Nav = () => {
   const items = [
@@ -45,7 +45,13 @@ const Nav = () => {
           aria-label="Open Menu"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+            <path
+              d="M4 7h16M4 12h16M4 17h16"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              fill="none"
+              strokeLinecap="round"
+            />
           </svg>
         </button>
       </div>
