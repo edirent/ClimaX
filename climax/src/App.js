@@ -2,7 +2,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
-import logo from "./assets/logo.png"; // ← LOGO 图片
 
 const Nav = () => {
   const items = [
@@ -17,7 +16,6 @@ const Nav = () => {
     <header className="nav">
       <div className="container nav__row">
         <a className="brand" href="#home" aria-label="Levi Carbon Technology Home">
-          <img src={logo} alt="Levi Carbon Technology Logo" className="brand__logo" />
           <span className="brand__text">Levi Carbon Technology</span>
         </a>
 
